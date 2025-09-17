@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirect</title>
+  <script>
+    const links = [
+      "https://www.miun.se/",  
+      "https://www.miun.se/utbildning/program/psykologprogrammet/"
+    ];
+    let counter = localStorage.getItem("enkätCounter");
+    if (counter === null) {
+      counter = 0;
+    } else {
+      counter = parseInt(counter);
+    }
+    const linkIndex = counter % links.length;
+    localStorage.setItem("enkätCounter", counter + 1);
+    window.location.href = links[linkIndex];
+  </script>
+</head>
+<body></body>
+</html>
